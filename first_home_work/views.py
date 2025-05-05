@@ -1,11 +1,12 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+
 
 def fist_home_wokr(request):
     if request.method == 'GET':
-        
-        context ={ 
-            'emodji' : "😈",
-            'text':'Привет моя первая домашка',
-            'run_string' : 'Hello World'
-            }
-        return render(request, template_name= 'index.html', context=context)
+        context = {
+            'emoji': "🎬",
+            'text' : 'First project',
+            'run_string': 'hello word'
+        }
+        return render(request, template_name='index.html', context=context)
