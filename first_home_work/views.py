@@ -5,8 +5,8 @@ from django.http import HttpResponse
 def fist_home_wokr(request):
     if request.method == 'GET':
         context = {
-            'emoji': "🎬",
+            'emoji': ":)",
             'text' : 'First project',
-            'run_string': 'hello word'
+            'run_string': 'lalalalalalallaallalalal'
         }
-        return render(request, template_name='index.html', context=context)
+        return render(request, template_name='index.html', context=con)

@@ -6,7 +6,8 @@ from first_home_work.views import fist_home_wokr
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', fist_home_wokr),
+    path('', include ('fist_home_wokr.urls')),
+     path('', include ('films.urls'))
     
 ]
 
