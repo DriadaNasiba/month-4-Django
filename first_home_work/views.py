@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, 
 from django.http import HttpResponse
 
 
@@ -9,4 +9,4 @@ def fist_home_wokr(request):
             'text' : 'First project',
             'run_string': 'lalalalalalallaallalalal'
         }
-        return render(request, template_name='index.html', context=con)
+        return render(request, template_name='index.html', context=context)

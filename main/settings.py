@@ -28,6 +28,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'first_home_work',
     'films',
+    'tags',
+    
 ]
 
 MIDDLEWARE = [

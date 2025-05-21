@@ -22,7 +22,7 @@
         <img src="{{ film_id.image.url}}"
              alt = "{{ film_id.title }}" class="film-poster">
         <div class="film-text">
-            <h1>Название фильма</h1>
+            <h1>{{film_id.title}}</h1>
             <p><strong>Дата выпуска:</strong> {{ film_id.create_at }}</p>
             <p><strong>Жанр:</strong> {{ film_id.genre }}</p>
             <p><strong>Директор:</strong> {{  film_id.author }}</p>
@@ -37,9 +37,11 @@
         <h2>Комментарии</h2>
         <div class="comment-list">
             <!--            цикл открытия-->
+            {% for i in film_id.reviews.all %}
             <div class="comment">
-                <p><strong>Пользователь1:</strong> Отличный фильм! Очень захватывающе!</p>
+                <p><strong>{{ i.user_name }}</strong> {{ i.text }}</p>
             </div>
+            {% endfor %}
             <!--            цикл закрытия -->
         </div>
     </div>
