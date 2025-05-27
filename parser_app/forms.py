@@ -5,15 +5,13 @@ class ParserForm(forms.Form):
     MEDIA_CHOICES = (
         ('rezka.ag', 'rezka.ag'),
     )
-media_type = forms.ChoiceField(choices=MEDIA_CHOICES)
+    media_type = forms.ChoiceField(choices=MEDIA_CHOICES)
 
-class Meta:
-    fields = [
-        'media_type',
-    ]
+    class Meta:
+        fields = ['media_type']
 
     def parser_data(self):
-        if self.data['media_type'] == 'rezka.ag':
+        if self.cleaned_data.get('media_type') == 'rezka.ag':
             rezka_films = parser_rezka.parsing_rezka()
             for i in rezka_films:
                 models.Parser_Rezka.objects.create(**i)
