@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интернет Кинотеатр</title>
+    <link rel="stylesheet" href="{% static 'css/header_and_footer/menu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/film_and_film_detail/cards.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header_and_footer/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tags/all_products.css '%}">
+</head>
+<body>
+
+<!-- Меню -->
+{% include 'components/header.html' %}
+
+
+<!-- Карточки всех тэгов -->
+<section class="cards">
+
+
+<div class="card">
+        <h2>Тег по напиткам</h2>
+
+        <ul class="product-list">
+            <!-- цикл тут открытие -->
+            {% for i in drink %}
+            <li>{{ i.product_name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+<!-- цикл тут закрытие -->
+
+
+</section>
+
+
+<!-- Футер -->
+{% include 'components/footer.html' %}
+
+</body>
+</html>

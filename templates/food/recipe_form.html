@@ -1,0 +1,14 @@
+<h1>Добавить</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить</button>
+</form>
+<a href="{% url 'recipe-list' %}">Назад</a>
+
+<h1>Удалить рецепт "{{ object.title }}"?</h1>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Да, удалить</button>
+</form>
+<a href="{% url 'recipe-list' %}">Отмена</a>
